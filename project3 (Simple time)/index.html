@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You'r time | Local </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            background-color: #212121;
+            color: #ffff;
+        }
+        footer{
+            position: fixed;
+            bottom: 10%;
+            left: 45%;
+        }
+        footer a{
+            color: seagreen;
+        }
+        @media(max-width:320px){
+            footer {
+                position: fixed;
+                bottom: 1%;
+                left: 25%;  
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <h3>You'r local time is</h3>
+        <p style="text-align: center; margin: 5px;" class="time"></p>
+    </div>
+    <footer>
+        <h5 style="text-align: center; margin: 8px;"><a href="/">alpha23@what.org</a></h5>
+        <h5>&copy; All rights are reserved</h5>
+    </footer>
+</body>
+
+<script>
+
+    
+    setInterval( ()=>{
+        let myTime = new Date().toLocaleTimeString()
+        document.querySelector('.time').innerHTML = `${myTime}`
+    },1000 )
+    
+</script>
+</html>

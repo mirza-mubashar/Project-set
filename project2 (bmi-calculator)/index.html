@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI | Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aliceblue;
+        }
+        input{
+            background-color: transparent;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            padding: 15px 0;
+            outline: none;
+            font-size: 18px;
+            width: 300px;
+        }
+        input::placeholder{
+            color: black;
+            font-size: 18px;
+        }
+        .result-error-div{
+            text-align: center;
+        }
+        .cal-button{
+            display: block;
+            margin: 12px auto;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            font-size: 15px;
+            border-radius: 10px;
+        }
+        .cal-button:hover{
+            cursor: pointer;
+        }
+        .result{
+            display: none;
+            background-color: rgba(17, 151, 17, 0.849);
+            color: white;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+        footer{
+            position: fixed;
+            bottom: 10%;
+            left: 45%;
+        }
+        .title{
+            margin: 10px;
+        }
+        @media(max-width:320px){
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            input {
+                background-color: transparent;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                padding: 4px 0;
+                outline: none;
+                font-size: 10px;
+                
+                width: 200px;
+                display: block;
+                margin: auto;
+                text-align: center;
+            }
+            footer {
+                position: fixed;
+                bottom: 1%;
+                left: 25%;  
+            }
+            input::placeholder{
+                font-size: 10px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title" ><h2 style="text-align: left;">BMI calclulator</h2></div>
+        <form action="/">
+            <input class="user-height" type="number" max="200" placeholder="Enter Height" required autofocus><br>
+            <input class="user-weight" type="number" max="120" placeholder="Enter Weight" required ><br>
+            <h5 style="margin-top: 10px;">Note:- Height and weight in cm's and kg's repectively.</h5>
+            <button class="cal-button" value="calculate" style="display: block; margin:  10px auto;">Calculate</button>
+        </form>
+        <div class="result"></div>
+
+    </div>
+    <footer>
+        <h5 style="text-align: center; margin: 8px;"><a href="/">alpha23@what.org</a></h5>
+        <h5>&copy; All rights are reserved</h5>
+    </footer>
+
+</body>
+<script>
+    
+
+    
+
+    document.querySelector('form').addEventListener( 'submit', (e)=>{
+        e.preventDefault()
+        
+        alert(`This web app is practiced by Mubashar Siddique`)
+        let height = document.querySelector('.user-height').value
+        let weight = document.querySelector('.user-weight').value
+        let bmi = (weight / (height * height)).toFixed(2);    
+        document.querySelector('.result').style.display = 'block'
+        document.querySelector('.result').innerHTML = `<span>You'r body mass index is ${bmi}.</span> <p>Please Refresh(F5) the page to perform calculations again</p>`
+        document.querySelector('input').setAttribute('disabled')        
+
+    })
+    
+
+
+</script>
+</html>
