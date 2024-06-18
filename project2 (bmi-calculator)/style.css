@@ -1,0 +1,95 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aliceblue;
+}
+input{
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 15px 0;
+    outline: none;
+    font-size: 18px;
+    width: 300px;
+}
+input::placeholder{
+    color: black;
+    font-size: 18px;
+}
+.result-error-div{
+    text-align: center;
+}
+.cal-button{
+    display: block;
+    margin: 12px auto;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.cal-button:hover{
+    cursor: pointer;
+}
+.result{
+    display: none;
+    background-color: rgba(17, 151, 17, 0.849);
+    color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+footer{
+    position: fixed;
+    bottom: 10%;
+    left: 45%;
+}
+.title{
+    margin: 10px;
+}
+@media(max-width:320px){
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    input {
+        background-color: transparent;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        padding: 4px 0;
+        outline: none;
+        font-size: 10px;
+        
+        width: 200px;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    footer {
+        position: fixed;
+        bottom: 1%;
+        left: 25%;  
+    }
+    input::placeholder{
+        font-size: 10px;
+    }
+}
+

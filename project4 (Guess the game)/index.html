@@ -5,63 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game | Guess the number</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: #212121;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content:center;
-            height: 90vh;
-            flex-direction: column;
-        }
-        input{
-            outline: none;
-            border-left: none;
-            border-right: none;
-            border-top: none;
-            background-color: transparent;
-            padding: 10px 0;
-            font-size: 14px;
-            color: white;
-
-        }
-        input::placeholder{
-            color: white;
-        }
-        button{
-            display: block;
-            margin: 10px auto;
-            background-color: green;
-            color: white;
-            border-radius: 10px;
-            padding: 10px;
-            border: transparent;
-        }
-        footer{
-            position: fixed;
-            bottom: 10%;
-            text-align: center;
-
-        }
-        footer a{
-            color: #b1d028;
-        }
-        @media( max-width: 320px ){
-            footer{
-                left: 20%;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }   
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -75,46 +20,6 @@
     <footer>
         <div class="title">Practiced by<a href="/">Mubashar Siddique |</a></div>
         <p><a href="/">alpha23@what.org</a></p>
-
     </footer>
 </body>
-
-<script>
-    
-    const ranNum = Math.floor(((((Math.random())*10)))+1)
-    let totalTries = 5
-    let preGuesses = []
-    let displayContainer = document.querySelector('.display-container')
-    displayContainer.style.padding = '10px'
-    displayContainer.style.borderRadius = '10px'
-
-    document.querySelector('form').addEventListener( 'submit', (e)=>{
-        e.preventDefault()
-
-        let userGuess = document.querySelector('#user-guess').value
-        
-
-        if( userGuess == ranNum ){
-            
-            preGuesses.push(userGuess)
-            displayContainer.innerHTML = `Congratulations! you guess the number in ${preGuesses.length} tries. Plese refresh the page to play again`
-            displayContainer.style.backgroundColor = 'green'
-
-        }else{
-            displayContainer.style.backgroundColor = 'red'
-            totalTries -= 1;
-            preGuesses.push(userGuess)
-            displayContainer.innerHTML = `You'r remaining tries are ${totalTries} <br> and you'r previous guesses are ${preGuesses} `
-            
-            if(totalTries == 0){
-                document.querySelector('.display-container').innerHTML = `Please refresh the page to play again`
-                totalTries = 5
-            }
-
-        }
-    } )
-
-    
-</script>
-
 </html>

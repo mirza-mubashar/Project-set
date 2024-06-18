@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #212121;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    flex-direction: column;
+}
+tr,th,td{
+    border: 1px solid white;
+    padding: 10px;
+}
+footer{
+    position: fixed;
+    bottom: 10%;
+    left: 45%;
+}
+footer a{
+    color: springgreen;
+}
+@media(max-width:320px){
+    footer {
+        position: fixed;
+        bottom: 1%;
+        left: 25%;  
+    } 
+}
